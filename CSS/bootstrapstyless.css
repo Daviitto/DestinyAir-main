@@ -1,0 +1,353 @@
+* {
+    font-family: 'latto', sans-serif;
+}
+
+.bg-primary-color {
+    background: linear-gradient(287.56deg, #2e66d5 0%, #10004f 100%);
+}
+
+.bg-secondary-color {
+    background-color: #ece8ea;
+}
+
+.bg-dark-color {
+    background-color: #000000;
+}
+
+.primary-color {
+    color: #ffffff;
+}
+
+.secondary-color {
+    color: #7a7a7a
+}
+
+/* NAVBAR */
+
+#navbar {
+    border-bottom: 1px solid #7a7a7a;
+    
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; 
+}
+
+.nav-item a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: inherit;
+    position: relative; /* Necessário para o pseudo-elemento */
+}
+
+.nav-item a::after {
+    content: ''; /* Cria uma linha invisível */
+    position: absolute;
+    bottom: 0; /* Posiciona a linha na parte inferior */
+    left: 0; /* Inicia do lado esquerdo */
+    width: 0; /* Começa com 0 de largura */
+    height: 2px; /* Altura da linha */
+    background-color: #FFFFFF; /* Cor da linha */
+    transition: width 0.3s ease; /* Transição suave para a largura */
+}
+
+.nav-item a:hover::after {
+    width: 100%; /* Quando o mouse passa, a linha cresce para 100% da largura */
+}
+ 
+
+
+@media (max-width: 768px) {
+.navbar-toggler.collapsed {
+    margin-right: -53%;
+    margin-top: 9%;
+    scroll-behavior: smooth;
+    
+   
+ }
+}
+.navbar-brand {
+    display: flex;
+    margin-right: 0%;
+    justify-content: space-between;
+    
+}
+ 
+.navbar-brand  img {
+    width: 150px;
+    margin-left: -12%;
+    margin-top: -1em;
+    border-radius: 5;
+}
+
+#navbar-items .navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 110ch;
+    
+    
+}
+
+
+/* barra de pesquisa */
+
+.search-box {
+    position: absolute;
+     right: 1%;
+      margin-top:  -10%;
+ 
+     
+     background: #FFFF;
+     height: 40px;
+     padding: 10px;
+     border-radius: 40px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     
+ }
+ 
+ ::-webkit-input-placeholder{
+ font-size: 17px;
+ font-family: system-ui, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ color: #aeaeae;
+ 
+ 
+ }
+ .search-text {
+     background: none;
+      border: 0;
+      outline: 0;
+      width: 0;
+      padding: 0;
+      font-size: 17px;
+      transition: 0.4s;
+ }
+ 
+ 
+ .search-btn {
+    text-decoration: none;
+     color: white;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+ 
+ }
+ 
+ .loupe-white{
+     display: none;
+    
+ }
+ 
+ .search-box:hover > .search-text {
+     width: 320px;
+     padding-left: 20px;
+ }
+ 
+ .search-box:hover  > .search-btn {
+ width: 40px;
+ height: 40px;
+     background: #447ce7;
+ }
+ 
+ .search-box:hover  > .search-btn .loupa-blue {
+     display: none;
+ }
+ 
+ .search-box:hover  > .search-btn .loupe-white {
+     display: block;
+ }
+
+
+/* SLIDER */
+
+#slider { 
+    margin-top: 5em;
+    margin-bottom: 1em;
+    
+}
+
+#slider .carousel-caption {  
+    bottom: 3em;
+}
+
+#slider .carousel-caption h5 {  
+    font-size: 2.5em;
+    text-shadow: #050505 2px 2px;
+ }
+
+ .btn {
+    border-radius: 5;
+  }
+
+  #slider .btn { 
+    padding: 0.3em 0.8em;
+    font-size: 1em;
+    margin-top: 1em;
+  }
+
+  .carousel-control-prev i,
+  .carousel-control-next i {
+    color: #020735;
+    font-size: 4em;
+    scroll-behavior: smooth;
+    
+   }
+
+   .carousel-indicators [data-bs-target] { 
+    background-color: #222;
+    opacity: 0.8;
+   }
+
+   .carousel-indicators .active { 
+    background-color: #000;
+   }
+   
+   .carousel-item {
+    margin-top: -4em;
+   }
+
+
+   @media(min-width: 767px) {
+    .search-box {
+       margin-right:6%;
+        bottom: 40%;
+    }
+
+    #slider .carousel-caption { 
+     bottom: 16em;
+    }
+
+    #slider .carousel-caption h5 {  
+        font-size: 4em;
+        text-shadow: #050505 2px 3px;
+        opacity: calc(0.8);
+     }
+
+     #slider .btn { 
+        padding: 0.6em 1.6em;
+        font-size: 1.2em;
+        
+      }
+
+      .carousel-indicators { 
+        bottom: 7em;
+       }
+
+       .carousel-item {
+        margin-top: -10em;
+       }
+
+       .navbar-brand img{
+        margin-top: -1em;
+       }
+   }
+
+   /* Mini Banners */
+
+   #mini-banners {
+    margin-bottom: 4em;
+   }
+
+   #mini-banners .card {
+    padding: 2em 0.3em;
+    border-radius: 0;
+    margin-bottom: 1em;
+    margin-left: 0em;
+
+   }
+
+   #mini-banners i {
+    font-size: 4em;
+   }
+
+   #mini-banners .card-title {
+    margin-bottom: 1.5em;
+
+   }
+
+   #mini-banners .btn {
+    margin-top: 1.5em;
+    padding: 0.6em 1.2em;
+   }
+
+   @media(min-width: 768px) {
+    #mini-banners {
+        margin-top: -7em;
+        margin-left: 5.5em;
+       
+    }
+
+   }
+
+   /* Destaques */
+
+   #featured-cotaier {
+    margin-bottom: 4em;
+   }
+
+   .title {
+    font-size: 1.75em;
+    margin-bottom: 0.4em;
+    position: relative;
+
+   }
+
+   .title:before {
+    width: 75px;
+    border-top: 4px solid #10004f;
+    content: "";
+    position: absolute;
+    bottom: 2em;
+   }
+
+   #featured-images {
+    margin-top: 2em;
+   }
+
+   #featured-images .col-md-4 {
+    position: relative;
+    cursor: pointer;
+   }
+
+   #featured-images .col-md-4:hover > .banner-content {
+    opacity: 0.8;
+   }
+
+   #featured-images .banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 99%;
+   
+    background-color:  #fdfdfd ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.4;
+    transition: 0.5s;
+   }
+
+   @media(min-width: 768px) {
+.title {
+    font-size: 2.4em;
+}
+ .title::before {
+    bottom: 1.5em;
+ }
+ #featured-images .banner-content {
+    opacity: 0;
+    left: 0;
+    height: 100%;
+    width: 94.9%;
+    margin-left: 0.7em;
+    
+ }
+   }
