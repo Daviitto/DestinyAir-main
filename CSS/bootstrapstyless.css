@@ -106,7 +106,7 @@ ul {
 
 .search-box {
     position: absolute;
-    right: 1%;
+    right: -1%;
     margin-top: -10%;
 
 
@@ -176,6 +176,8 @@ ul {
 
 
 /* SLIDER */
+ 
+
 
 #slider {
     margin-top: 5em;
@@ -261,31 +263,126 @@ ul {
 
 /* Mini Banners */
 
+
+.card {
+
+    align-items: center;
+    width: 69rem;
+    height: 15em;
+    background-color: #ffffff;
+    font-family: Helvetica, sans-serif;
+    display: block;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(287.56deg, #c4cee7 0%, #fdfdfd 100%);
+}
+
+.dropdown {
+    margin: 1em;
+    display: inline-block;
+}
+
+.dropdown * {
+    box-sizing: border-box;
+}
+
+.select {
+    display: flex;
+    justify-content: space-between; /* Ajuste para separar o texto e o caret */
+    align-items: center;
+    width: 250px; /* Largura fixa para o botão */
+    padding: 1.2em; /* Ajusta o padding para deixar o botão mais alto */
+    border-radius: 0.8em; /* Bordas arredondadas */
+    font-size: 1em; /* Tamanho de fonte relativo ao botão */
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito grande */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    overflow: hidden; /* Esconde o texto que ultrapassar o limite do botão */
+    box-shadow: 0 0 0.8em rgba(0, 0, 0, 0.2); /* Sombra leve */
+    background-color: #4267b3;
+    cursor: pointer;
+    transition: background 0.3s, border 0.3s;
+    text-decoration: none;
+}
+
+.select-clicked {
+    border: 2px solid #26489a; /* Borda ao clicar */
+    box-shadow: 0 0 0.8em #26489a; /* Sombra ao clicar */
+}
+
+.select:hover {
+    background: #adc3f0;
+}
+
+.selected {
+    flex-grow: 1; /* Faz o texto ocupar o espaço restante */
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for longo */
+    white-space: nowrap; /* Garante que o texto não quebre em várias linhas */
+    overflow: hidden; /* Esconde o texto que ultrapassar o limite */
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #070707;
+    transition: 0.3s;
+}
+
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.menu {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #90abdf;
+    border: 1px #d5dbe8 solid;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+    color: #01030a;
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    display: none;
+    transition: opacity 0.2s ease;
+    z-index: 1;
+    margin-top: 5px;
+}
+
+.menu li {
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background: #102356;
+}
+
+.active {
+    background: #9ca2c2;
+}
+
+.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
 #mini-banners {
     margin-bottom: 4em;
 }
 
-#mini-banners .card {
-    padding: 2em 0.3em;
-    border-radius: 0;
-    margin-bottom: 1em;
-    margin-left: 0em;
 
-}
 
-#mini-banners i {
-    font-size: 4em;
-}
-
-#mini-banners .card-title {
-    margin-bottom: 1.5em;
-
-}
-
-#mini-banners .btn {
-    margin-top: 1.5em;
-    padding: 0.6em 1.2em;
-}
 
 @media(min-width: 768px) {
     #mini-banners {
@@ -294,6 +391,27 @@ ul {
 
     }
 
+}
+@media (max-width: 768px) {
+    .card {
+        width: 95%;
+        height: auto;
+        padding: 1em;
+    }
+
+    .select {
+        width: 100%; /* Botão ocupa toda a largura */
+        font-size: 0.9em; /* Reduz ligeiramente o tamanho da fonte */
+        padding: 1em; /* Ajusta o padding para melhorar o espaço em telas menores */
+    }
+
+    .menu {
+        width: 100%; /* O menu ocupa toda a largura disponível */
+    }
+
+    .menu li {
+        padding: 0.5em; /* Diminui o padding das opções do menu para caber melhor */
+    }
 }
 
 /* Destaques */
@@ -488,8 +606,8 @@ footer {
 
 #input_group input {
     all: unset;
-padding: 0.75rem;
-width: 100%;
+    padding: 0.75rem;
+    width: 100%;
 }
 
 #input_group button {

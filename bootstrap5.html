@@ -135,53 +135,43 @@
             </button>
         </div>
         <!--MINI BANNERS-->
-        <div class="col-12 col-md-10 offset-md-1" id="mini-banners">
-            <div class="row">
-                <div class="col-12 col-md-4 ">
-                    <div class="card text-center">
-                        <i class="bi bi-airplane-engines"></i>
-                        <div class="card-body">
-                            <h5 class="card-title ">Sua Rota para Aventuras Incríveis</h5>
-                            <p class="card-text secondary-color">
-                                Na Destiny Airlines, somos seus parceiros na descoberta do mundo. Oferecemos
-                                experiências únicas e atendimento dedicado, tornando cada voo e destino especiais.
-                            </p>
-                            <a href="#" class="btn btn-dark">Saber Mais</a>
-                        </div>
-                    </div>
+        <div class="card" id="mini-banners">
+            <div class="dropdown">
+                <div class="select">
+                    <span class="selected">Ida e Volta</span>
+                    <div class="caret"></div>
                 </div>
-                <div class="col-12 col-md-4 ">
-                    <div class="card text-center">
-                        <i class="bi bi-house-lock-fill"></i>
-                        <div class="card-body">
-                            <h5 class="card-title">Sua Próxima Aventura Começa Aqui</h5>
-                            <p class="card-text secondary-color">
-                                Na Destiny Airlines, nossa missão é levá-lo a destinos inesquecíveis com conforto e
-                                segurança. Nossa equipe apaixonada garante que cada jornada seja memorável.
-
-                            </p>
-                            <a href="#" class="btn btn-dark">Saber Mais</a>
-                        </div>
-                    </div>
+                <ul class="menu">
+                    <li>Só ida ou volta</li>
+                    <li class="active">Ida e Volta</li>
+                </ul>
+            </div>
+        
+            <div class="dropdown">
+                <div class="select">
+                    <span class="selected">Economia Premium</span>
+                    <div class="caret"></div>
                 </div>
-                <div class="col-12 col-md-4 ">
-                    <div class="card text-center">
-                        <i class="bi bi-compass"></i>
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Transformando Sonhos em Destinos
-                            </h5>
-                            <p class="card-text secondary-color">
-                                Na Destiny Airlines, cada viagem é uma aventura extraordinária. Com nosso serviço
-                                excepcional e itinerários inovadores, transformamos seus sonhos em realidade.
-                            </p>
-                            <a href="#" class="btn btn-dark">Saber Mais</a>
-                        </div>
-                    </div>
+                <ul class="menu">
+                    <li>Econômico</li>
+                    <li>Executiva Premium</li>
+                    <li class="active">Economia Premium</li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <div class="select">
+                    <span class="selected">1 passageiro</span>
+                    <div class="caret"></div>
                 </div>
+                <ul class="menu">
+                    <li>1 passageiros</li>
+                    <li>2 ou mais passageiros</li>
+                    <li>1 Criança (a partir de 2 anos)</li>
+                    <li class="active">2 ou mais Criança (a partir de 2 anos)</li>
+                </ul>
             </div>
         </div>
-
+     
     </div>
     <!--DESTAQUES-->
     <div class="container" id="featured-container">
@@ -250,9 +240,9 @@
     <footer>
         <div id="footer-content">
             <div id="footer-contacts">
-                <h1> <img src="imagem/Destiny_1.png"  alt="DestinyAirlines" width="200px" ></h1>
+                <h1> <img src="imagem/Destiny_1.png" alt="DestinyAirlines" width="200px"></h1>
                 <p>It's all about your dreams.
-                    <p>É sobre seus sonhos.</p>
+                <p>É sobre seus sonhos.</p>
                 </p>
                 <div id="footer_social_media">
                     <a href="#" class="footer-link" id="instagram">
@@ -315,12 +305,12 @@
                 <p>
                     enter your e-mail
                 </p>
-              <div id="input_group">
-                <input type="email" id="email">
-                <button>
-                    <i class="fa-regular fa-envelope"></i>
-                </button>
-              </div>
+                <div id="input_group">
+                    <input type="email" id="email">
+                    <button>
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>
+                </div>
             </div>
 
 
@@ -328,11 +318,12 @@
         </div>
 
         <div id="footer_copyright">
-         &#169
-         2024 all rightts reserved    
+            &#169
+            2024 all rightts reserved
         </div>
-            
+
     </footer>
+    <script src="button.js"></script>
 </body>
 
 </html>
