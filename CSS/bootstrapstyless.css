@@ -382,6 +382,34 @@ ul {
 }
 
 
+.passageiros-dropdown li{
+    display: flex;
+    flex-direction: column;
+}
+
+.quantidade button{
+   width: 30px;
+   height: 30px;
+   border-radius: 60rem;
+   border: none;
+   justify-content: center;
+   box-sizing: border-box;
+   align-items: center;
+   font-size: 15px;
+   gap: 5px;
+}
+.menu p {
+    margin: 0;
+    
+}
+.quantidade{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-direction: row;
+    justify-content: right;
+    margin-top: -40px;
+}
 
 
 @media(min-width: 768px) {
@@ -445,7 +473,7 @@ ul {
 }
 
 #featured-images .col-md-4:hover>.banner-content {
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 #featured-images .banner-content {
@@ -461,7 +489,7 @@ ul {
     align-items: center;
     flex-direction: column;
     opacity: 0.4;
-    transition: 0.5s;
+    transition: 0.9s;
 }
 
 @media(min-width: 768px) {
@@ -525,7 +553,8 @@ footer {
     background-color: var(--color-neutral-10);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 3rem 3.5rem;
+    padding: 1rem 3.5rem;
+    margin-top: 100px;
 }
 
 #footer_contacts h1 {
