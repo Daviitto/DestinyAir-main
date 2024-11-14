@@ -364,9 +364,8 @@ ul {
     background: #102356;
 }
 
-.active {
-    background: #9ca2c2;
-}
+
+
 
 .menu-open {
     display: block;
@@ -399,9 +398,14 @@ ul {
    gap: 5px;
 }
 .menu p {
-    margin: 0;
-    
+    color: #545566;
+
 }
+
+.menu .none:hover {
+    background: none;
+}
+
 .quantidade{
     display: flex;
     align-items: center;
@@ -410,6 +414,12 @@ ul {
     justify-content: right;
     margin-top: -40px;
 }
+
+
+.quantidade button:hover{
+    background-color: gray;
+}
+
 
 
 @media(min-width: 768px) {
