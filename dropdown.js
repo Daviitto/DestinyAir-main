@@ -1,80 +1,116 @@
-// Seleciona todos os elementos que têm a classe "dropdown"
+// Seleciona todos os elementos com a classe "dropdown" (que representa os dropdowns na página)
 const dropdowns = document.querySelectorAll('.dropdown');
 
 // Itera por cada dropdown encontrado na página
 dropdowns.forEach(dropdown => {
-    // Para cada dropdown, seleciona o botão principal e os elementos necessários
-    const select = dropdown.querySelector('.select'); // O botão que abre o menu
-    const caret = dropdown.querySelector('.caret');   // O ícone de seta para baixo
-    const menu = dropdown.querySelector('ul');        // O menu com as opções (lista)
 
-    // Verifica se o dropdown tem a classe "passageiros-dropdown"
+    // Seleciona os elementos internos dentro de cada dropdown
+    const select = dropdown.querySelector('.select');  // O contêiner que exibe a opção selecionada
+    const caret = dropdown.querySelector('.caret');    // A seta indicadora (geralmente para expandir/colapsar o menu)
+    const menu = dropdown.querySelector('ul');         // O menu suspenso (a lista de opções)
+
+    // Verifica se o dropdown é do tipo "passageiros-dropdown"
     if (dropdown.classList.contains('passageiros-dropdown')) {
-        // Se for o dropdown de passageiros, adiciona o evento de clique para abrir e fechar o menu
+
+        // Evento de clique na área de seleção do dropdown (mostra/esconde o menu)
         select.addEventListener('click', () => {
-            // Alterna as classes para estilização e abertura do menu
-            select.classList.toggle('select-clicked'); // Adiciona uma borda ou efeito visual ao botão
-            caret.classList.toggle('caret-rotate');    // Gira o ícone de seta
-            menu.classList.toggle('menu-open');        // Exibe ou oculta o menu
+            // Alterna as classes para abrir/fechar o menu e girar a seta
+            select.classList.toggle('select-clicked');
+            caret.classList.toggle('caret-rotate');
+            menu.classList.toggle('menu-open');
         });
 
-        // Seleciona todos os botões de aumentar e diminuir dentro do dropdown
-        const buttonsIncrease = dropdown.querySelectorAll('.btn-increase'); // Botões de aumentar
-        const buttonsDecrease = dropdown.querySelectorAll('.btn-decrease'); // Botões de diminuir
+        // Seleciona os botões de aumento e diminuição dentro do dropdown
+        const buttonsIncrease = dropdown.querySelectorAll('.btn-increase');
+        const buttonsDecrease = dropdown.querySelectorAll('.btn-decrease');
 
-        // Adiciona eventos de clique para cada botão de aumento
+        // Evento de clique nos botões de aumento (para adicionar passageiros)
         buttonsIncrease.forEach(button => {
             button.addEventListener('click', () => {
-                // Encontra o elemento de contagem diretamente relacionado ao botão
-                const countElement = button.parentElement.querySelector('.count'); // Elemento que mostra o número de passageiros
-                let count = parseInt(countElement.textContent); // Converte o texto atual para número
-                countElement.textContent = count + 1;           // Incrementa o número e atualiza o texto
+                const countElement = button.parentElement.querySelector('.count'); // Seleciona o elemento de contagem
+                let count = parseInt(countElement.textContent);  // Converte o texto da contagem para número
+
+                // Verifica se o total de passageiros não ultrapassa 9
+                if (calcularTotalPassageiros() < 9) {
+                    countElement.textContent = count + 1;  // Incrementa a contagem de passageiros
+                    updatePassengerSummary(); // Atualiza o cabeçalho com a nova contagem de passageiros
+                } else {
+                    alert('O número máximo de passageiros é 9!'); // Exibe um alerta caso o limite seja atingido
+                }
             });
         });
 
-        // Adiciona eventos de clique para cada botão de diminuição
+        // Evento de clique nos botões de diminuição (para subtrair passageiros)
         buttonsDecrease.forEach(button => {
             button.addEventListener('click', () => {
-                // Encontra o elemento de contagem diretamente relacionado ao botão
-                const countElement = button.parentElement.querySelector('.count');
-                let count = parseInt(countElement.textContent); // Converte o texto atual para número
-                if (count > 0) {                                // Garante que o número não seja negativo
-                    countElement.textContent = count - 1;       // Decrementa o número e atualiza o texto
+                const countElement = button.parentElement.querySelector('.count'); // Seleciona o elemento de contagem
+                let count = parseInt(countElement.textContent);  // Converte o texto da contagem para número
+                if (count > 0) { // Verifica se o número de passageiros é maior que 0
+                    countElement.textContent = count - 1; // Decrementa a contagem de passageiros
+                    updatePassengerSummary(); // Atualiza o cabeçalho com a nova contagem de passageiros
                 }
             });
         });
     } else {
-        // Se não for o dropdown de passageiros, lida com opções de seleção padrão
-        const options = menu.querySelectorAll('li');      // Seleciona todas as opções de menu (elementos <li>)
-        const selected = dropdown.querySelector('.selected'); // Elemento que mostra a opção selecionada no botão principal
 
-        // Adiciona o evento de clique para abrir/fechar o menu e exibir apenas as opções não selecionadas
+        // Para os dropdowns que não são de passageiros, lidamos com o comportamento do menu
+        const options = menu.querySelectorAll('li'); // Seleciona todas as opções do menu
+        const selected = dropdown.querySelector('.selected'); // A opção selecionada (exibida no dropdown)
+
+        // Evento de clique na área de seleção do dropdown (para abrir/fechar o menu de opções)
         select.addEventListener('click', () => {
-            select.classList.toggle('select-clicked'); // Adiciona uma borda ou efeito visual ao botão
-            caret.classList.toggle('caret-rotate');    // Gira o ícone de seta
+            // Alterna as classes para abrir/fechar o menu e girar a seta
+            select.classList.toggle('select-clicked');
+            caret.classList.toggle('caret-rotate');
 
-            // Para cada opção de menu, exibe apenas as opções que não foram selecionadas
+            // Mostra/oculta as opções do menu dependendo da opção selecionada
             options.forEach(option => {
                 if (option.innerText === selected.innerText) {
-                    option.classList.add('hidden');   // Oculta a opção que já está selecionada
+                    option.classList.add('hidden');  // Oculta a opção já selecionada
                 } else {
-                    option.classList.remove('hidden'); // Exibe as opções que não estão selecionadas
+                    option.classList.remove('hidden');  // Mostra as opções restantes
                 }
             });
 
-            menu.classList.toggle('menu-open'); // Exibe ou oculta o menu
+            menu.classList.toggle('menu-open'); // Alterna a visibilidade do menu
         });
 
-        // Adiciona um evento para cada opção de menu para alterar a seleção
+        // Evento de clique em cada opção do menu
         options.forEach(option => {
             option.addEventListener('click', () => {
-                selected.innerText = option.innerText; // Atualiza o texto no botão principal com a opção selecionada
-
-                // Fecha o menu e remove as classes de estilização do botão e da seta
-                select.classList.remove('select-clicked'); 
-                caret.classList.remove('caret-rotate');    
-                menu.classList.remove('menu-open');        
+                selected.innerText = option.innerText;  // Define a opção clicada como a selecionada
+                select.classList.remove('select-clicked'); // Fecha o menu após a seleção
+                caret.classList.remove('caret-rotate'); // Remove a rotação da seta
+                menu.classList.remove('menu-open'); // Fecha o menu
             });
         });
     }
 });
+
+// Função para calcular o total de passageiros
+function calcularTotalPassageiros() {
+    // Obtém a contagem de cada tipo de passageiro e soma todos os valores
+    const adultCount = parseInt(document.querySelector('.count[data-type="adult"]').textContent);
+    const adolescentCount = parseInt(document.querySelector('.count[data-type="adolescent"]').textContent);
+    const childCount = parseInt(document.querySelector('.count[data-type="child"]').textContent);
+    const babyCount = parseInt(document.querySelector('.count[data-type="baby"]').textContent);
+    
+    return adultCount + adolescentCount + childCount + babyCount; // Retorna o total de passageiros
+}
+
+// Função para atualizar o cabeçalho "Passageiros" com a contagem total
+function updatePassengerSummary() {
+    // Obtém o número de passageiros de cada tipo
+    const adultCount = parseInt(document.querySelector('.count[data-type="adult"]').textContent);
+    const adolescentCount = parseInt(document.querySelector('.count[data-type="adolescent"]').textContent); 
+    const childCount = parseInt(document.querySelector('.count[data-type="child"]').textContent);
+    const babyCount = parseInt(document.querySelector('.count[data-type="baby"]').textContent);
+
+    // Calcula o total de passageiros
+    const totalPassengers = adultCount + adolescentCount + childCount + babyCount;
+    // Cria um texto com a descrição de quantos passageiros de cada tipo foram selecionados
+    const summaryText = `${adultCount} Adulto(s), ${adolescentCount} Adolescente(s), ${childCount} Criança(s), ${babyCount} Bebê(s)`;
+
+    // Atualiza o texto exibido no botão "Passageiros" com a contagem total de passageiros
+    document.querySelector('.passageiros-dropdown .selected').textContent = summaryText;
+}

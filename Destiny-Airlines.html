@@ -50,26 +50,25 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link primary-color" aria-current=page>Home</a>
                     <li class="nav-item">
-                        <a href="#" class="nav-link primary-color">Ofertas e destinos</a>
+                        <a href="#Ofertas" class="nav-link primary-color">Ofertas e destinos</a>
                     <li class="nav-item">
                         <a href="#" class="nav-link primary-color">Minhas viagens</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link primary-color">Central de ajuda</a>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link primary-color Login">Login</a>
                     </li>
                 </ul>
             </div>
-            <container id="col ">
-                <div class="search-box">
-                    <input type="text" class="search-text" placeholder="Pesquise mais viagens...">
-                    <a class="search-btn">
-                        <img class="loupa-blue" src="imagem/loupe-blue.svg" alt="lupa azul" width="30px" height="30px">
-                        <img class="loupe-white" src="imagem/loupe-white.svg" alt="lupa branca" width="35px"
-                            height="35px">
-            </container>
+            <div class="fundo">
+                <a href="" style="color: black">
+                    <i class="fa-solid fa-user fa-bounce fa-lg" class="user"></i>
+                </a>
+            </div>
         </div>
+
     </nav>
 
     <!-- SLIDER -->
@@ -98,7 +97,7 @@
                 <div class="carousel-item ">
                     <img src="imagem/coliseu de roma.jpeg" alt="coliseu de roma" class="d-block w-100">
                     <div class="carousel-caption">
-                        <h5>Coliseu de Roma</h5>
+                        <h5> Roma</h5>
                         <a href="#" class="btn btn-dark">Saiba mais</a>
                     </div>
                 </div>
@@ -134,7 +133,7 @@
                 <span class="visually-hidden">next</span>
             </button>
         </div>
-        <!--MINI BANNERS-->
+        <!--BUSCA DE VIAGENS-->
         <div class="card" id="mini-banners">
             <div class="dropdown">
                 <div class="select">
@@ -146,7 +145,7 @@
                     <li class="active">Ida e Volta</li>
                 </ul>
             </div>
-        
+
             <div class="dropdown">
                 <div class="select">
                     <span class="selected">Economia Premium</span>
@@ -158,53 +157,71 @@
                     <li class="active">Economia Premium</li>
                 </ul>
             </div>
+
             <div class="dropdown passageiros-dropdown">
                 <div class="select">
                     <span class="selected">Passageiros</span>
                     <div class="caret"></div>
                 </div>
-                <ul class="menu"  >
+                <ul class="menu">
                     <li class="none">Adulto(s)
                         <p>+ 18 Anos</p>
-                        <container class="quantidade">
-                        <button class="btn-decrease"> - </button>
-                        <span class="count" data-type="adult"> 1</span>
-                        <button class="btn-increase">  + </button>
-                    
-                    
-                    </container>
+                        <div class="quantidade">
+                            <button class="btn-decrease"> - </button>
+                            <span class="count" data-type="adult">1</span>
+                            <button class="btn-increase"> + </button>
+                        </div>
                     </li>
-                    <li class="none">Adolescente(s) 
-                        <p> 12 ~ 17 Anos</p>
-                        <container class="quantidade">
-                        <button class="btn-decrease"> - </button>
-                        <span class="count" data-type="child"> 0</span>
-                        <button class="btn-increase">  + </button></container>
+                    <li class="none">Adolescente(s)
+                        <p>12 ~ 17 Anos</p>
+                        <div class="quantidade">
+                            <button class="btn-decrease"> - </button>
+                            <span class="count" data-type="adolescent">0</span>
+                            <button class="btn-increase"> + </button>
+                        </div>
                     </li>
-                    <li class="none">Criança(s) 
-                        <p> 2 ~ 7 Anos</p>
-                        <container class="quantidade">
-                        <button class="btn-decrease"> - </button>
-                        <span class="count" data-type="child"> 0</span>
-                        <button class="btn-increase">  + </button></container>
+                    <li class="none">Criança(s)
+                        <p>2 ~ 7 Anos</p>
+                        <div class="quantidade">
+                            <button class="btn-decrease"> - </button>
+                            <span class="count" data-type="child">0</span>
+                            <button class="btn-increase"> + </button>
+                        </div>
                     </li>
-                    <li class="none">bebê(s)
-                        <p>0 ~23 Meses</p>
-                        <container class="quantidade">
-                        <button class="btn-decrease"> - </button>
-                              <span class="count" data-type="baby"> 0</span> 
-                        <button class="btn-increase">  + </button></container>
+                    <li class="none">Bebê(s)
+                        <p>0 ~ 23 Meses</p>
+                        <div class="quantidade">
+                            <button class="btn-decrease"> - </button>
+                            <span class="count" data-type="baby">0</span>
+                            <button class="btn-increase"> + </button>
+                        </div>
                     </li>
-                    
                 </ul>
             </div>
+            
+
+            <label class="planes"><i class="fa-solid fa-plane-departure fa-2xl"></i>
+                <i class="fa-solid fa-plane-arrival fa-2xl"></i></label>
+            <input type="search" placeholder="Origem" class="Origem">
+            <input type="search" placeholder="Destino" class="Destino">
+            <div class="idaVolta">
+                <div class="input-container">
+                    <span class="label">Ida</span>
+                    <input type="date" id="ida">
+                </div>
+                <div class="input-container">
+                    <span class="label">Volta</span>
+                    <input type="date" id="volta">
+                </div>
+            </div>
+            <button class="btn-buscar">Procurar</button>
         </div>
-     
+
     </div>
     <!--DESTAQUES-->
     <div class="container" id="featured-container">
         <div class="col-12">
-            <h2 class="title">Descubra sua Proxima viagem</h2>
+            <h2 class="title" id="Ofertas">Descubra sua Proxima viagem</h2>
             <p class="subtitle secondary-color">
                 Conheças nossos pacotes de viagens
             </p>
@@ -218,6 +235,7 @@
                         <h3> Orlando</h3>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-4">
                     <img src="imagem/parques.jpeg" class="img-fluid">
                     <div class="banner-content">
@@ -226,6 +244,7 @@
                         <h3> Orlando</h3>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-4">
                     <img src="imagem/parques.jpeg" class="img-fluid">
                     <div class="banner-content">
@@ -234,6 +253,7 @@
                         <h3> Orlando</h3>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-4">
                     <img src="imagem/parques.jpeg" class="img-fluid">
                     <div class="banner-content">
@@ -242,6 +262,7 @@
                         <h3> Orlando</h3>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-4">
                     <img src="imagem/parques.jpeg" class="img-fluid">
                     <div class="banner-content">
@@ -250,6 +271,7 @@
                         <h3> Orlando</h3>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-4">
                     <img src="imagem/parques.jpeg" class="img-fluid">
                     <div class="banner-content">
@@ -258,6 +280,62 @@
                         <h3> Orlando</h3>
                     </div>
                 </div>
+
+                <div class="col-12 col-md-4">
+                    <img src="imagem/parques.jpeg" class="img-fluid">
+                    <div class="banner-content">
+                        <p class="secondary-color">Estados unidos
+                        </p>
+                        <h3> Orlando</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <img src="imagem/parques.jpeg" class="img-fluid">
+                    <div class="banner-content">
+                        <p class="secondary-color">Estados unidos
+                        </p>
+                        <h3> Orlando</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <img src="imagem/parques.jpeg" class="img-fluid">
+                    <div class="banner-content">
+                        <p class="secondary-color">Estados unidos
+                        </p>
+                        <h3> Orlando</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <img src="imagem/parques.jpeg" class="img-fluid">
+                    <div class="banner-content">
+                        <p class="secondary-color">Estados unidos
+                        </p>
+                        <h3> Orlando</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <img src="imagem/parques.jpeg" class="img-fluid">
+                    <div class="banner-content">
+                        <p class="secondary-color">Estados unidos
+                        </p>
+                        <h3> Orlando</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <img src="imagem/parques.jpeg" class="img-fluid">
+                    <div class="banner-content">
+                        <p class="secondary-color">Estados unidos
+                        </p>
+                        <h3> Orlando</h3>
+                    </div>
+                </div>
+                <button class="seeMore">Veja mais <i class="fa-solid fa-arrow-down"></i></button>
+
             </div>
 
         </div>
@@ -322,7 +400,7 @@
                     <a href="#" class="footer-link"> Dicas de segurança</a>
                 </li>
                 <li>
-                    <a href="#" class="footer-link"> Informações necessárias para embarque de menores </a>
+                    <a href="#" class="footer-link"> Informações necessárias para embarque de menores</a>
                 </li>
             </ul>
 
@@ -331,14 +409,18 @@
                 <h3> Fale conosco</h3>
 
                 <p>
-                    enter your e-mail
+                    Escreva no campo abaixo e insira seu email
                 </p>
+                <container class="box" id="Box">
+                    <input type="text" class="BoxText">
+                </container>
                 <div id="input_group">
                     <input type="email" id="email">
                     <button>
                         <i class="fa-regular fa-envelope"></i>
                     </button>
                 </div>
+
             </div>
 
 

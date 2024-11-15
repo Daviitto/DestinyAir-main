@@ -67,12 +67,12 @@ ul {
     /* Quando o mouse passa, a linha cresce para 100% da largura */
 }
 
-
-
+.Login {
+    left: 19rem;
+}
 @media (max-width: 768px) {
     .navbar-toggler.collapsed {
-        margin-right: -53%;
-        margin-top: 9%;
+        margin-right: -30%;
         scroll-behavior: smooth;
 
 
@@ -102,77 +102,35 @@ ul {
 }
 
 
-/* barra de pesquisa */
+/* Icone de Perfil */
 
-.search-box {
-    position: absolute;
-    right: -1%;
-    margin-top: -10%;
-
-
-    background: #FFFF;
-    height: 40px;
-    padding: 10px;
-    border-radius: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-::-webkit-input-placeholder {
-    font-size: 17px;
-    font-family: system-ui, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #aeaeae;
-
-
-}
-
-.search-text {
-    background: none;
-    border: 0;
-    outline: 0;
-    width: 0;
-    padding: 0;
-    font-size: 17px;
-    transition: 0.4s;
-}
-
-
-.search-btn {
-    text-decoration: none;
-    color: white;
+.fundo {
+    background-color: rgb(196, 204, 246);
+    width: 48px;
+    height: 45px;
     border-radius: 50%;
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    border: 1.5px solid #020735;
+}
+
+.user i {
+    color: #000;
+}
+.fundo:hover{
     cursor: pointer;
-
 }
 
-.loupe-white {
-    display: none;
-
+@media (max-width: 768px) {
+    .Login {
+        flex-direction: column;
+        margin-top: -8px;
+        left: 2px;
+        font-size: 14px;
+    }
 }
 
-.search-box:hover>.search-text {
-    width: 320px;
-    padding-left: 20px;
-}
-
-.search-box:hover>.search-btn {
-    width: 40px;
-    height: 40px;
-    background: #447ce7;
-}
-
-.search-box:hover>.search-btn .loupa-blue {
-    display: none;
-}
-
-.search-box:hover>.search-btn .loupe-white {
-    display: block;
-}
 
 
 /* SLIDER */
@@ -227,10 +185,8 @@ ul {
 
 
 @media(min-width: 767px) {
-    .search-box {
-        margin-right: 6%;
-        bottom: 40%;
-    }
+   
+    
 
     #slider .carousel-caption {
         bottom: 16em;
@@ -253,12 +209,14 @@ ul {
     }
 
     .carousel-item {
-        margin-top: -10em;
+        margin-top: -12em;
     }
 
     .navbar-brand img {
         margin-top: -1em;
     }
+
+    
 }
 
 /* Mini Banners */
@@ -268,7 +226,7 @@ ul {
 
     align-items: center;
     width: 69rem;
-    height: 15em;
+    height: 13em;
     background-color: #ffffff;
     font-family: Helvetica, sans-serif;
     display: block;
@@ -299,7 +257,7 @@ ul {
     white-space: nowrap; /* Impede que o texto quebre em várias linhas */
     overflow: hidden; /* Esconde o texto que ultrapassar o limite do botão */
     box-shadow: 0 0 0.8em rgba(0, 0, 0, 0.2); /* Sombra leve */
-    background-color: #4267b3;
+    background-color: #8aa7eb;
     cursor: pointer;
     transition: background 0.3s, border 0.3s;
     text-decoration: none;
@@ -365,8 +323,6 @@ ul {
 }
 
 
-
-
 .menu-open {
     display: block;
     opacity: 1;
@@ -385,6 +341,8 @@ ul {
     display: flex;
     flex-direction: column;
 }
+
+
 
 .quantidade button{
    width: 30px;
@@ -422,6 +380,126 @@ ul {
 
 
 
+
+.Origem {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+    margin-top: 2rem;
+    width: 18rem;
+    height: 4rem;
+    text-decoration: none;
+    padding: 10px;
+    font-size: medium;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+
+
+.planes i{
+    justify-content: space-between;
+    margin-left: 50px;
+}
+.Destino {
+    display: flex;
+    flex-direction: row;
+    margin-left: 18.8rem;
+    margin-top: -4rem;
+    width: 18rem;
+    height: 4rem;
+    text-decoration: none;
+    padding: 10px;
+    font-size: medium;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+ 
+.idaVolta {
+    display: flex;
+    gap: 2px;
+    margin-left: 37rem;
+    margin-top: -4rem;
+    width: 9rem;
+    height: 4rem;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: solid 2px gray;
+    border-radius: 5px;
+    padding-left: 5px;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.label {
+    position: absolute;
+    font-size: 0.9rem;
+    color: gray;
+    left: 5px;
+    pointer-events: none;
+    margin-right: 5px;
+}
+
+.input-container input {
+    border: none;
+    outline: none;
+    padding-left: 40px; /* espaço para o label */
+    width: 100%;
+    font-size: 0.9rem;
+    background: none;
+    color: black;
+}
+
+
+.btn-buscar  {
+    margin-left: 56rem;
+    margin-top: -3.8rem;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    flex-direction: column;
+    width: 12rem;
+    height: 3.5rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: #b22222;
+    color: white;
+        font-size: 20px;
+}
+
+.btn-buscar:hover {
+    background-color: #dc143c;
+}
+
+.idaVolta button{
+    width: 50rem;
+}
+
+
+@media screen and (max-width: 426px) {
+    .select {
+        flex-direction: column ;
+    }
+}
+
 @media(min-width: 768px) {
     #mini-banners {
         margin-top: -7em;
@@ -432,7 +510,7 @@ ul {
 }
 @media (max-width: 768px) {
     .card {
-        width: 95%;
+        width: 100%;
         height: auto;
         padding: 1em;
     }
@@ -441,8 +519,11 @@ ul {
         width: 100%; /* Botão ocupa toda a largura */
         font-size: 0.9em; /* Reduz ligeiramente o tamanho da fonte */
         padding: 1em; /* Ajusta o padding para melhorar o espaço em telas menores */
+        display: flex;
+        flex-direction: column;
     }
-
+    
+  
     .menu {
         width: 100%; /* O menu ocupa toda a largura disponível */
     }
@@ -451,6 +532,61 @@ ul {
         padding: 0.5em; /* Diminui o padding das opções do menu para caber melhor */
     }
 }
+
+       
+@media (max-width: 1200px) {
+    .Origem, .Destino, .idaVolta, .btn-buscar {
+        max-width: 16rem;
+    }
+    .Origem, .Destino, .idaVolta {
+        margin: 0.5rem auto;
+    }
+    .btn-buscar {
+        margin: 1rem auto;
+    }
+}
+
+/* Estilos para telas pequenas (abaixo de 768px) */
+@media (max-width: 768px) {
+    .Origem, .Destino, .idaVolta, .btn-buscar {
+        width: 100%;
+        max-width: 100%;
+        margin: 0.5rem auto;
+    }
+    .Origem, .Destino {
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .idaVolta {
+        justify-content: center;
+        margin-left: 0;
+    }
+    .btn-buscar {
+        margin: 1rem auto;
+        font-size: 18px;
+    }
+}
+
+/* Estilos para telas muito pequenas (abaixo de 480px) */
+@media (max-width: 480px) {
+    .Origem, .Destino, .idaVolta, .btn-buscar {
+        width: 100%;
+        max-width: 100%;
+    }
+    .btn-buscar {
+        font-size: 16px;
+        height: 3rem;
+    }
+    .input-container input {
+        font-size: 0.8rem;
+    }
+}    
+       
+       
+       
+       
+       
+
 
 /* Destaques */
 
@@ -502,6 +638,23 @@ ul {
     transition: 0.9s;
 }
 
+.seeMore {
+     width: 10rem;
+     margin-right: auto;
+     margin-left: auto;
+     height: 3rem;
+     border: none;
+     border-radius: 10px;
+     background-color: #CD1043;
+     color: #ffffff;
+     font-size: 20px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seeMore:hover {
+    transform: translateY(9px); /* Move o botão para cima */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra para dar mais efeito */
+}
 @media(min-width: 768px) {
     .title {
         font-size: 2.4em;
@@ -649,6 +802,17 @@ footer {
     width: 100%;
 }
 
+.box input{
+    margin-bottom: -22px;
+    flex-direction: column;
+    height: 9rem;
+    width: 25rem;
+    border-radius: 4px;
+    background-color:#ffffff;
+    border: none;
+
+}
+
 #input_group button {
     background-color: #7f37c9;
     border: none;
@@ -684,5 +848,16 @@ footer {
     #footer-content {
         grid-template-columns: repeat(1, 1fr);
         padding: 3rem 2rem;
+
+    
     }
+   #Box {
+    margin-left: -24px;
+   }
+  
+   #input_group{
+     width: 25rem;
+    margin-left: -24px;
+   }
+   
 }
