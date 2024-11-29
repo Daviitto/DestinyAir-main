@@ -1,0 +1,221 @@
+/* Estilo Geral */
+html, body {
+    background: linear-gradient(287.56deg, #c4cee7 0%, #fdfdfd 100%);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Garante que o fundo cubra toda a largura */
+    height: 100%; /* Adicionado para garantir altura completa */
+    background-size: cover; /* Ajusta o background para cobrir a tela */
+}
+
+main {
+    margin-top: 10rem;
+}
+
+.container {
+    width: 90%;
+    margin: 10px auto; /* Centraliza horizontalmente */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #0074d9;
+}
+
+header p {
+    margin: 5px 0 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+}
+
+.filter label {
+    margin-left: 5px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.time-range label {
+    font-size: 0.9em;
+    margin-right: 5px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead {
+    background: #0074d9;
+    color: white;
+}
+
+thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+    padding: 10px;
+}
+
+tbody tr:hover {
+    background: #f4f4f4;
+}
+
+.button1, .button3, .button5 {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.button2, .button4, .button6 {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #218838;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    width: 22px;
+    height: 24px;
+    background-color: #72b6f2;
+    margin-left: -60px;
+    padding: 5px;
+}
+
+.button-container button {
+    border: none;
+}
+
+.p {
+    margin-top: -18px;
+}
+
+/* Responsividade para telas até 1024px */
+@media (max-width: 1024px) {
+    main {
+        margin-top: 8rem; /* Reduz a margem superior */
+    }
+
+    .container {
+        width: 95%; /* Garante mais espaço em telas maiores que 768px */
+        padding: 10px;
+        margin: auto;
+    }
+
+    .filters {
+        flex-direction: row; /* Mantém em linha para telas maiores */
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    table {
+        font-size: 1em; /* Ajuste para leitura em telas maiores */
+        margin-left: 0.5rem;
+    }
+
+    .button-container {
+        margin-left: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 3px;
+        border-radius: 90px;
+    }
+}
+
+/* Responsividade para telas até 768px */
+@media (max-width: 768px) {
+    html {
+        width: 100vh;
+    }
+    main {
+        margin-top: 10rem;
+    }
+
+    .container {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    table {
+        font-size: 0.9em;
+        margin-left: 0.5rem;
+    }
+
+    .button-container {
+        margin-left: 0;
+        width: 2rem;
+        height: 2rem;
+        padding: 1px;
+        border-radius: 90px;
+    }
+}
+
+/* Responsividade para telas até 480px */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    header p {
+        font-size: 0.8em;
+    }
+
+    table {
+        font-size: 0.8em;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .button1, .button3, .button5, .button2, .button4, .button6 {
+        padding: 6px 8px;
+        font-size: 0.8em;
+    }
+}
