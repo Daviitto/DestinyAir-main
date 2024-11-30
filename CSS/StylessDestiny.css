@@ -622,20 +622,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 
 /* Estilo para o título */
-.title {
-    font-size: 1.75em;
-    margin-bottom: 0.4em;
-    position: relative;
-}
 
-/* Adiciona uma linha acima do título */
-.title:before {
-    width: 75px;
-    border-top: 4px solid #10004f;
-    content: "";
-    position: absolute;
-    bottom: -1.2em; /* Ajuste para ficar mais próximo do título */
-}
 
 /* Estilo para a área de imagens */
 #featured-images {
@@ -708,13 +695,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra para dar mais efeito */
 }
 @media(min-width: 768px) {
-    .title {
-        font-size: 2.4em;
-    }
-
-    .title::before {
-        bottom: 1.5em;
-    }
+    
 
     #featured-images .banner-content {
         opacity: 0;
@@ -727,16 +708,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 /* Responsividade: Ajustes para telas pequenas (mobile) */
 @media (max-width: 767px) {
-    .title {
-        font-size: 1.5em;
-        margin-bottom: 0.3em;
-    }
-
-    .title::before {
-        bottom: -1em;
-        width: 60px; /* Menor linha no título */
-    }
-
+    
     #featured-images .col-md-4 {
         max-width: 100%; /* Ocupa 100% da largura em telas pequenas */
         height: auto; /* Garantir que a altura seja automática para o card */
@@ -769,14 +741,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 
 /* Responsividade: Ajustes para tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .title {
-        font-size: 2.1em;
-    }
-
-    .title::before {
-        bottom: 1.5em;
-    }
-
+  
     #featured-images .col-md-4 {
         max-width: 50%; /* Ocupa 50% da largura em tablets */
     }
